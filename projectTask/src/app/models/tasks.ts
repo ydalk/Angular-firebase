@@ -4,5 +4,6 @@ export class Task {
     description?: string;
     priority?: string;
     status?: string;
+    responsible?: string;
     complete?: boolean = false;
 }
