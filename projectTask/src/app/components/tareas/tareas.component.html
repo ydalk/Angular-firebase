@@ -1,9 +1,39 @@
-<div *ngIf="tasks">
-    <div *ngFor="let task of tasks">
-        <app-task-details [taskDetail]='task'></app-task-details>
-    </div>
+<div *ngIf="tareas">
+    <ul>
+        <li *ngFor="let tarea of tareas; trackBy: trackByFn">
+            <div class="row">
+                <div class="col s12 m8">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">{{ tarea .tarea }}</span>
+                            <p id="description_form_field" class="form-field-task">
+                                <label for="descripcion">Descripción: </label>{{ tarea .descripcion }}
+                            </p>
+                            <p id="responsable_form_field" class="form-field-task">
+                                <label for="responsable">Responsable: </label>{{ tarea .responsable }}
+                            </p>
+                            <p id="prioridad_form_field" class="form-field-task">
+                                <label for="prioridad">Prioridad: </label>{{ tarea .prioridad }}
+                            </p>
+                            <p id="status_form_field" class="form-field-task">
+                                <label for="estado">Estado: </label>{{ tarea .estado }}
+                            </p>
+                            <p id="active_form_field" class="form-field-task">
+                                <label for="completada">Completada: </label>{{ tarea .completada }}
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a *ngIf="!tarea .completada" (click)="updateActiveField( true, tarea )">Finalizar</a>
+                            <a *ngIf="tarea .completada" (click)="updateActiveField( false, tarea )">En proceso</a>
+                            <a routerLink="/agregar/{{ tarea .key }}">Editar</a>&nbsp;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
     <button (click)="deleteTasks()" class="waves-effect waves-light btn">Eliminar todos</button>
 </div>
-<div *ngIf="!tasks">
+<div *ngIf="!tareas">
     <p class="card-panel lime lighten-4">No hay registros!</p>
 </div>
