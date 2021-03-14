@@ -1,1 +1,9 @@
-<p>tareas works!</p>
+<div *ngIf="tasks">
+    <div *ngFor="let task of tasks">
+        <app-task-details [taskDetail]='task'></app-task-details>
+    </div>
+    <button (click)="deleteTasks()" class="waves-effect waves-light btn">Eliminar todos</button>
+</div>
+<div *ngIf="!tasks">
+    <p class="card-panel lime lighten-4">No hay registros!</p>
+</div>
