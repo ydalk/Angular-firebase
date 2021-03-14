@@ -46,6 +46,16 @@ export class TareasService {
       .catch(error => this.handleError(error));
   }
 
+  eliminarTarea( id ): void {
+    this .taskRef .remove( id )
+      .then( _ => console .log( 'Registro eliminado exitosamente!' ) )
+      .catch( error => this .handleError( error ) );
+  }
+
+  eliminarTodas(): void {
+    this .taskRef .remove()
+      .catch( error => this .handleError( error ) );
+  }
   private handleError(error) {
     console.log(error);
   }

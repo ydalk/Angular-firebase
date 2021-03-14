@@ -26,13 +26,14 @@
                             <a *ngIf="!tarea .completada" (click)="updateActiveField( true, tarea )">Finalizar</a>
                             <a *ngIf="tarea .completada" (click)="updateActiveField( false, tarea )">En proceso</a>
                             <a routerLink="/agregar/{{ tarea .key }}">Editar</a>&nbsp;
+                            <a (click)="eliminarTarea( tarea )">Eliminar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </li>
     </ul>
-    <button (click)="deleteTasks()" class="waves-effect waves-light btn">Eliminar todos</button>
+    <button (click)="eliminarTodas()" class="waves-effect waves-light btn">Eliminar todas</button>
 </div>
 <div *ngIf="!tareas">
     <p class="card-panel lime lighten-4">No hay registros!</p>

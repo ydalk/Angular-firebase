@@ -57,4 +57,12 @@ export class TareasComponent implements OnInit {
     );
   }
 
+  eliminarTarea(tarea) {
+    this.tareasService.eliminarTarea(tarea.key);
+  }
+
+  eliminarTodas() {
+    this.tareasService.eliminarTodas();
+  }
+
 }
