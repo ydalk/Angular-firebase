@@ -9,11 +9,13 @@ import { TareasComponent } from './components/tareas/tareas.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AgregarTareaComponent } from './components/agregar-tarea/agregar-tarea.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TareasComponent
+    TareasComponent,
+    AgregarTareaComponent
   ],
   imports: [
     BrowserModule,
